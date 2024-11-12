@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifePlus</title>
+    {% load static %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background:url("{% static 'img/hosp1.jpg' %}");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+
+        }
+
+        .Lifeplus {
+            font-size: 30px;
+            color: white;
+            font-style: italic;
+        }
+
+        .navi a {
+            position: relative;
+            font-size: medium;
+            color: white;
+            font-weight: 500;
+            margin-left: 40px;
+            
+        }
+
+        .navi .btn  {
+            
+            width: 100px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid white;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            color: whitesmoke;
+            font-weight: 500;
+            margin-left: 20px;
+            transition: 0.5s;
+            padding-right: 130px;
+
+            
+        }
+        
+
+
+        .navi .btn:hover a {
+            background: white;
+            color: black;
+
+        }
+
+        .home-content {
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 800px;
+            color: white;
+            margin-right: 370px;
+        }
+
+        .home-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            margin-top: 40px;
+            margin-right: 120px;
+        }
+
+        .home-content p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            margin-right: 120px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-right: 120px;
+        }
+
+        .cta-buttons a {
+            padding: 15px 30px;
+            background-color: #007ACC;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1em;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #005DAA;
+        }
+
+   
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2 class="Lifeplus">LifePlus</h2>
+        <nav class="navi">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <button class="btn"><a href="/Login">Login</a></button>
+            <button class="btn"><a href="/register">Register</a></button>
+            
+        </nav>
+    </header>
+    <section class="home-content">
+        <h1>Welcome to LifePlus</h1>
+        <p>Your trusted partner in blood group identification. At LifePlus, we offer reliable and quick blood group identification services, helping you to know your blood type and contribute to life-saving blood donation initiatives.</p>
+        <p>Our platform connects blood donors and recipients, creating a seamless experience in emergency and routine blood transfusions. Whether you're here to find out your blood type or to register as a donor, LifePlus is committed to supporting community health and safety.</p>
+        <div class="cta-buttons">
+            <a href="/services">Explore Services</a>
+            <a href="/register">Get Started</a>
+        </div>
+    </section>
+
+</body>
+
+</html>

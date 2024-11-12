@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Group Identification Web App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Background gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #ff6b6b;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff4b4b;
+        }
+
+        .blood-cell-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff6b6b;
+            margin-bottom: 10px;
+
+        }
+
+        .uploaded-image{
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff6b6b;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Blood Group Identification Web App!</h1>
+        <form method="post"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="image-container">
+                <label for="abo_image">ABO Blood Cell Image</label>
+                <img src="https://i.ibb.co/F3wFxyP/abc-blood-group.jpg" alt="ABO Blood Cell" class="blood-cell-image"> <!-- Placeholder image for ABO -->
+                <input type="file" id="abo_image" name="abo_image" accept="image/*">
+            </div>
+
+            <button type="submit">Check for Blood Group</button>
+        </form>
+        <br>
+        <div>
+            {% if img %}
+            <h3>Uploaded Image:</h3>
+            <img src="{{ img }}" alt="Uploaded Blood Cell Image" class="uploaded-image">
+        {% endif %}
+        
+        </div>   
+    </div>
+</body>
+</html>
