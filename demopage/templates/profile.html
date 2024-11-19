@@ -106,7 +106,17 @@
             <img src="{{ img }}" alt="Uploaded Blood Cell Image" class="uploaded-image">
         {% endif %}
         
-        </div>   
+        </div> 
+        <div>
+            <h3>Processed Image:</h3>
+            {% if processed_img %}
+                <img src="{{ processed_img }}" alt="Processed Blood Cell Image" class="uploaded-image">
+            {% endif %}
+        </div>
+        <div>
+            <h3>Blood Group:</h3>
+            <p>{{ blood_type }} {{ rh_factor }}</p>
+        </div>  
     </div>
 </body>
 </html>
